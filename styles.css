@@ -39,24 +39,22 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    overflow: hidden;
 }
 
 .previous-operand {
     color: #888;
-    font-size: 22px;
-    min-height: 26px;
+    font-size: 20px;
+    min-height: 24px;
     font-weight: 300;
+    opacity: 0.7;
 }
 
 .current-operand {
     color: #fff;
     font-size: 56px;
     font-weight: 300;
-    line-height: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 100%;
+    line-height: 1.1;
 }
 
 /* Button grid */
