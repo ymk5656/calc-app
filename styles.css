@@ -53,6 +53,10 @@ body {
     font-size: 56px;
     font-weight: 300;
     line-height: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
 }
 
 /* Button grid */

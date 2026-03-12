@@ -10,6 +10,7 @@ class Calculator {
         this.previousOperand = '';
         this.operation = undefined;
         this.shouldResetScreen = false;
+        this.currentOperandElement.style.fontSize = '56px';
     }
 
     toggleSign() {
@@ -131,6 +132,17 @@ class Calculator {
         }
     }
 
+    adjustFontSize() {
+        const text = this.currentOperandElement.innerText;
+        const length = text.length;
+        let fontSize = 56;
+        
+        if (length > 8) fontSize = 40;
+        else if (length > 6) fontSize = 48;
+        
+        this.currentOperandElement.style.fontSize = fontSize + 'px';
+    }
+
     updateDisplay() {
         // Show previous operand with operation
         if (this.operation != null && this.previousOperand !== '') {
@@ -139,6 +151,13 @@ class Calculator {
         } else {
             this.previousOperandElement.innerText = '';
         }
+
+        // Show current operand
+        this.currentOperandElement.innerText = this.getDisplayNumber(this.currentOperand);
+        
+        // Adjust font size for long numbers
+        this.adjustFontSize();
+    }
 
         // Show current operand (always show current value)
         this.currentOperandElement.innerText = this.getDisplayNumber(this.currentOperand);
